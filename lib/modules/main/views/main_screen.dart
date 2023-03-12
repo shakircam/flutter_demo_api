@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/values/app_colors.dart';
+import '../../authentication/views/login_page.dart';
 import '../../home/views/home_page.dart';
 import '../../other/views/other_page.dart';
 import '../../setting/views/setting_page.dart';
@@ -16,10 +17,11 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   int _selectedIndex = 0;
 
-  List<Widget> _widgetOptions = <Widget>[
+  final List<Widget> _widgetOptions = <Widget>[
     HomePage(),
-    SettingsPage(),
-    OtherPage(),
+    const SettingsPage(),
+    const OtherPage(),
+     LoginPage(),
   ];
 
   @override
@@ -31,7 +33,7 @@ class _MainScreenState extends State<MainScreen> {
         currentIndex: _selectedIndex,
         showSelectedLabels: false,
         showUnselectedLabels: false,
-        items: [
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(
               Icons.home,
@@ -48,7 +50,7 @@ class _MainScreenState extends State<MainScreen> {
               Icons.settings,
               color: AppColors.navigationInactiveColor,
             ),
-            label: 'Setting',
+            label: 'Settings',
             activeIcon: Icon(
               Icons.settings,
               color: AppColors.navigationActiveColor,
@@ -63,6 +65,19 @@ class _MainScreenState extends State<MainScreen> {
             label: 'Other',
             activeIcon: Icon(
               Icons.more,
+              color: AppColors.navigationActiveColor,
+              size: 36,
+            ),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.login,
+              color: AppColors.navigationInactiveColor,
+              size: 36,
+            ),
+            label: 'Login',
+            activeIcon: Icon(
+              Icons.login,
               color: AppColors.navigationActiveColor,
               size: 36,
             ),

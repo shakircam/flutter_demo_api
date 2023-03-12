@@ -50,11 +50,14 @@ class HomePage extends BaseView<HomeController> {
   Widget body(BuildContext context) {
    return Padding(
       padding: const EdgeInsets.all(AppValues.padding),
-      child : ListView.builder(
-          itemCount: controller.projectList.length,
-          itemBuilder: (context, index) =>
-            ItemBrand(dataModel: controller.projectList[index])
+      child : Obx(
+          () =>  ListView.builder(
+              itemCount: controller.brandList.length,
+              itemBuilder: (context, index) =>
+                  ItemBrand(dataModel: controller.brandList[index])
           ),
+      ),
+
    /*   child: Obx(
             () => ListView.separated(
           shrinkWrap: true,

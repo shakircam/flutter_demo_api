@@ -16,7 +16,7 @@ class HomeController extends BaseController{
   final RxList<BrandUiData> _brandListController =
   RxList.empty();
 
-  List<BrandUiData> get projectList =>
+  List<BrandUiData> get brandList =>
       _brandListController.toList();
 
 

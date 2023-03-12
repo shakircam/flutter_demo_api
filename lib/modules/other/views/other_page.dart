@@ -10,7 +10,7 @@ class OtherPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Other'),
       ),
-      body: Center(
+      body: const Center(
         child: Text('Other Page'),
       ),
 
