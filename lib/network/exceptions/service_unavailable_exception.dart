@@ -1,4 +1,4 @@
-import 'dart:html';
+import 'package:get/get_connect/http/src/status/http_status.dart';
 
 import 'base_api_exception.dart';
 

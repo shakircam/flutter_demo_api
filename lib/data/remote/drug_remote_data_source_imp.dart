@@ -1,7 +1,7 @@
+import 'package:dio/dio.dart';
 
 import 'package:flutter_demo/core/base/base_remote_source.dart';
 import 'package:flutter_demo/modules/home/model/brand_query_param.dart';
-
 import 'package:flutter_demo/modules/home/model/brand_remote_response.dart';
 
 import '../../network/dio_provider.dart';
@@ -15,10 +15,14 @@ class DrugRemoteDataSourceImp extends BaseRemoteSource implements DrugRemoteData
 
     try{
       return callApiWithErrorParser(dioCall)
-          .then((response) => _parseGithubProjectSearchResponse(response));
+          .then((response) => _parseBrandResponse(response));
     }catch (e){
       rethrow;
     }
+  }
+
+  BrandRemoteResponse _parseBrandResponse(Response<dynamic> response) {
+    return BrandRemoteResponse.fromJson(response.data);
   }
 
 }
