@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -19,14 +17,13 @@ class _MainScreenState extends State<MainScreen> {
 
   final List<Widget> _widgetOptions = <Widget>[
     HomePage(),
-    const SettingsPage(),
-    const OtherPage(),
-     LoginPage(),
+    SettingsPage(),
+    OtherPage(),
+    LoginPage(),
   ];
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       backgroundColor: Colors.white,
       bottomNavigationBar: BottomNavigationBar(
@@ -92,5 +89,4 @@ class _MainScreenState extends State<MainScreen> {
       body: _widgetOptions.elementAt(_selectedIndex),
     );
   }
-
 }
