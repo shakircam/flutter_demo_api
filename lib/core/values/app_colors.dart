@@ -1,4 +1,3 @@
-
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
@@ -9,7 +8,7 @@ abstract class AppColors {
 
   static const Color pageBackground = Color(0xFFFAFBFD);
   static const Color statusBarColor = Color(0xFF38686A);
-  static const Color appBarColor = Color(0xFF38686A);
+  static const Color appBarColor = Colors.blue;
   static const Color appBarIconColor = Color(0xFFFFFFFF);
   static const Color appBarTextColor = Color(0xFFFFFFFF);
 
@@ -22,6 +21,15 @@ abstract class AppColors {
   static const Color lightGreyColor = Color(0xFFC4C4C4);
   static const Color errorColor = Color(0xFFAB0B0B);
   static const Color colorDark = Color(0xFF323232);
+
+  static const Color kCustomInfoColor = Color(0xff175CD3);
+  static const Color kCustomInfoBackgroundColor = Color(0xffD1E9FF);
+
+  static const Color kCustomColor = Color(0xffC11574);
+  static const Color kCustomBackgroundColor = Color(0xffFDF2FA);
+
+  static const Color kCustomBuyColor = Color(0xff5925DC);
+  static const Color kCustomBuyBackgroundColor = Color(0xffEBE9FE);
 
   static const Color buttonBgColor = colorPrimary;
   static const Color disabledButtonBgColor = Color(0xFFBFBFC0);

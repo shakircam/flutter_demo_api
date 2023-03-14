@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import '../values/app_colors.dart';
 import '../values/app_values.dart';
 
-
 class ElevatedContainer extends StatelessWidget {
   final Widget child;
   final Color bgColor;
