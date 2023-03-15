@@ -8,32 +8,7 @@ import '../../../core/widget/custom_app_bar.dart';
 import '../controller/home_controller.dart';
 import '../widget/item_brand.dart';
 
-/*class HomePage extends StatefulWidget {
-  const HomePage({super.key});
-
-  @override
-  _HomePageState createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Home'),
-      ),
-      body: Center(
-        child: Text('Home Page'),
-      ),
-
-    );
-  }
-
-}*/
-
 class HomePage extends BaseView<HomeController> {
-
   HomePage() {
     Get.put(HomeController());
     controller.getBrandList();
@@ -48,17 +23,16 @@ class HomePage extends BaseView<HomeController> {
 
   @override
   Widget body(BuildContext context) {
-   return Padding(
+    return Padding(
       padding: const EdgeInsets.all(AppValues.padding),
-      child : Obx(
-          () =>  ListView.builder(
-              itemCount: controller.brandList.length,
-              itemBuilder: (context, index) =>
-                  ItemBrand(dataModel: controller.brandList[index])
-          ),
+      child: Obx(
+        () => ListView.builder(
+            itemCount: controller.brandList.length,
+            itemBuilder: (context, index) =>
+                ItemBrand(dataModel: controller.brandList[index])),
       ),
 
-   /*   child: Obx(
+      /*   child: Obx(
             () => ListView.separated(
           shrinkWrap: true,
           itemCount: controller.projectList.length,
@@ -75,6 +49,4 @@ class HomePage extends BaseView<HomeController> {
       ),*/
     );
   }
-
 }
-

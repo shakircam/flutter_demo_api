@@ -1,4 +1,4 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class CustomBoxContainer extends StatelessWidget {
@@ -19,26 +19,28 @@ class CustomBoxContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: bgColor,
-        borderRadius: BorderRadius.circular(10),
-        border: Border.all(
-          color: solidColor,
-          width: outlineStrokeWidth,
-        ),
-      ),
-      padding: const EdgeInsets.all(16),
-      child: Row(
-        children: [
-          SvgPicture.asset(imagePath),
-          const SizedBox(width: 8),
-          Text(
-            text,
-            style: TextStyle(
-                color: solidColor, fontWeight: FontWeight.bold, fontSize: 16),
+    return InkWell(
+      child: Container(
+        decoration: BoxDecoration(
+          color: bgColor,
+          borderRadius: BorderRadius.circular(10),
+          border: Border.all(
+            color: solidColor,
+            width: outlineStrokeWidth,
           ),
-        ],
+        ),
+        padding: const EdgeInsets.all(16),
+        child: Row(
+          children: [
+            SvgPicture.asset(imagePath),
+            const SizedBox(width: 8),
+            Text(
+              text,
+              style: TextStyle(
+                  color: solidColor, fontWeight: FontWeight.bold, fontSize: 16),
+            ),
+          ],
+        ),
       ),
     );
   }

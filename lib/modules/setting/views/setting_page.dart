@@ -1,12 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/core/base/base_view.dart';
 import 'package:flutter_demo/core/values/app_values.dart';
 import 'package:flutter_demo/core/widget/custom_app_bar.dart';
 import 'package:flutter_demo/modules/setting/controller/setting_controller.dart';
 import 'package:get/get.dart';
-
-import '../model/user_info.dart';
 
 class SettingsPage extends BaseView<SettingController> {
   SettingsPage() {

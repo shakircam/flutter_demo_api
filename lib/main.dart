@@ -4,6 +4,7 @@ import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'core/bindings/initial_binding.dart';
+import 'routes/app_pages.dart';
 
 void main() async {
   await Hive.initFlutter();
@@ -20,6 +21,8 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       initialBinding: InitialBinding(),
+      initialRoute: AppPages.INITIAL,
+      getPages: AppPages.routes,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),

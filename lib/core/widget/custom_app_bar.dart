@@ -1,4 +1,3 @@
-
 //Default appbar customized with the design of our app
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +14,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
     Key? key,
     required this.appBarTitleText,
     this.actions,
-    this.isBackButtonEnabled = true,
+    this.isBackButtonEnabled = false,
   }) : super(key: key);
 
   @override
