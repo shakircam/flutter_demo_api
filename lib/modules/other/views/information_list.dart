@@ -18,8 +18,7 @@ class InformationList extends StatelessWidget {
             trailing: Icon(Icons.arrow_forward_ios),
             onTap: () {
               Get.toNamed(Routes.INFORMATION_DETAILS, arguments: {
-                "greeting": "Hello",
-                "name": "World",
+                "greeting": DamiList.informationItems[index],
               });
             },
           ),

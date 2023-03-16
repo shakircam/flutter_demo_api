@@ -6,6 +6,7 @@ import 'package:flutter_demo/core/widget/custombox_container.dart';
 import 'package:flutter_demo/modules/other/controller/other_controller.dart';
 import 'package:flutter_demo/modules/other/model/banner_image_model.dart';
 import 'package:flutter_demo/modules/other/views/information_list.dart';
+import 'package:flutter_demo/modules/weather/current_location_page.dart';
 import 'package:flutter_demo/routes/app_pages.dart';
 import 'package:get/get.dart';
 
@@ -14,7 +15,6 @@ class OtherPage extends BaseView<OtherController> {
 
   OtherPage() {
     Get.put(OtherController());
-    controller.startTimer();
   }
 
   @override
@@ -72,66 +72,54 @@ class OtherPage extends BaseView<OtherController> {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Obx(
-            () => Container(
-              height: 200,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Stack(
-                  children: [
-                    Container(
-                      child: Positioned(
-                        bottom: 10.0,
-                        left: 0,
-                        right: 0,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: controller.bannerImagesList
-                              .asMap()
-                              .entries
-                              .map((entry) {
-                            final int index = entry.key;
-                            return GestureDetector(
-                              onTap: () => controller.pageController
-                                  .animateToPage(index,
-                                      duration: Duration(milliseconds: 500),
-                                      curve: Curves.ease),
-                              child: Container(
-                                width: 10.0,
-                                height: 10.0,
-                                margin: EdgeInsets.symmetric(horizontal: 4.0),
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: (controller.currentPage.value == index)
-                                      ? Colors.blueGrey
-                                      : Colors.white,
-                                ),
-                              ),
-                            );
-                          }).toList(),
-                        ),
+          Container(
+            //width: MediaQuery.of(context).size.width,
+            height: 200,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: <Widget>[
+                  Container(
+                    height: 480.0,
+                    width: 360.0,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage('images/banner_image1.png'),
+                        fit: BoxFit.fill,
                       ),
+                      shape: BoxShape.rectangle,
                     ),
-                    PageView(
-                      controller: controller.pageController,
-                      onPageChanged: controller.onPageChanged,
-                      children: controller.bannerImagesList
-                          .map(
-                            (imageData) => GestureDetector(
-                              onTap: () =>
-                                  controller.launchUrl(imageData['linkUrl']!),
-                              child: Container(
-                                child: Image.network(
-                                  imageData['imageUrl']!,
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                            ),
-                          )
-                          .toList(),
+                  ),
+                  SizedBox(
+                    width: 8,
+                  ),
+                  Container(
+                    height: 480.0,
+                    width: 360.0,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage('images/banner_image1.png'),
+                        fit: BoxFit.fill,
+                      ),
+                      shape: BoxShape.rectangle,
                     ),
-                  ],
-                ),
+                  ),
+                  SizedBox(
+                    width: 8,
+                  ),
+                  Container(
+                    height: 240.0,
+                    width: 360.0,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage('images/banner_image1.png'),
+                        fit: BoxFit.fill,
+                      ),
+                      shape: BoxShape.rectangle,
+                    ),
+                  ),
+                ],
               ),
             ),
           ),
@@ -317,16 +305,21 @@ class OtherPage extends BaseView<OtherController> {
             ],
           ),
           Row(
-            children: const [
+            children: [
               Expanded(
                 child: Padding(
                   padding: EdgeInsets.all(8.0),
-                  child: CustomBoxContainer(
-                      text: "Weather",
-                      imagePath: "images/book_open_01.svg",
-                      bgColor: AppColors.kCustomInfoBackgroundColor,
-                      solidColor: AppColors.kCustomInfoColor,
-                      outlineStrokeWidth: .1),
+                  child: GestureDetector(
+                    onTap: () {
+                      Get.to(CurrentLocationPage());
+                    },
+                    child: CustomBoxContainer(
+                        text: "Weather",
+                        imagePath: "images/book_open_01.svg",
+                        bgColor: AppColors.kCustomInfoBackgroundColor,
+                        solidColor: AppColors.kCustomInfoColor,
+                        outlineStrokeWidth: .1),
+                  ),
                 ),
               ),
               Expanded(
@@ -685,4 +678,68 @@ class OtherPage extends BaseView<OtherController> {
     ];
     return _imageList;
   }
+
+  // Obx(
+  //           () => Container(
+  //             height: 200,
+  //             child: Padding(
+  //               padding: const EdgeInsets.all(8.0),
+  //               child: Stack(
+  //                 children: [
+  //                   Container(
+  //                     child: Positioned(
+  //                       bottom: 10.0,
+  //                       left: 0,
+  //                       right: 0,
+  //                       child: Row(
+  //                         mainAxisAlignment: MainAxisAlignment.center,
+  //                         children: controller.bannerImagesList
+  //                             .asMap()
+  //                             .entries
+  //                             .map((entry) {
+  //                           final int index = entry.key;
+  //                           return GestureDetector(
+  //                             onTap: () => controller.pageController
+  //                                 .animateToPage(index,
+  //                                     duration: Duration(milliseconds: 500),
+  //                                     curve: Curves.ease),
+  //                             child: Container(
+  //                               width: 10.0,
+  //                               height: 10.0,
+  //                               margin: EdgeInsets.symmetric(horizontal: 4.0),
+  //                               decoration: BoxDecoration(
+  //                                 shape: BoxShape.circle,
+  //                                 color: (controller.currentPage.value == index)
+  //                                     ? Colors.blueGrey
+  //                                     : Colors.white,
+  //                               ),
+  //                             ),
+  //                           );
+  //                         }).toList(),
+  //                       ),
+  //                     ),
+  //                   ),
+  //                   PageView(
+  //                     controller: controller.pageController,
+  //                     onPageChanged: controller.onPageChanged,
+  //                     children: controller.bannerImagesList
+  //                         .map(
+  //                           (imageData) => GestureDetector(
+  //                             onTap: () =>
+  //                                 controller.launchUrl(imageData['linkUrl']!),
+  //                             child: Container(
+  //                               child: Image.network(
+  //                                 imageData['imageUrl']!,
+  //                                 fit: BoxFit.cover,
+  //                               ),
+  //                             ),
+  //                           ),
+  //                         )
+  //                         .toList(),
+  //                   ),
+  //                 ],
+  //               ),
+  //             ),
+  //           ),
+  //         ),
 }
