@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
+import 'package:firebase_dynamic_links/firebase_dynamic_links.dart';
 import '../../../core/values/app_colors.dart';
 import '../../authentication/views/login_page.dart';
 import '../../home/views/home_page.dart';
@@ -21,6 +21,36 @@ class _MainScreenState extends State<MainScreen> {
     OtherPage(),
     LoginPage(),
   ];
+
+  void initDynamicLinks() async{
+    FirebaseDynamicLinks dynamicLinks = FirebaseDynamicLinks.instance;
+    /// `When app is terminated, or user just signs in/ signs up to app after clicking on dynamic link`
+    /// shakircam.page.link
+    PendingDynamicLinkData? data = await dynamicLinks.getInitialLink();
+    Uri? deepLink = data?.link;
+    if (deepLink != null) {
+      var list = deepLink.toString().split(".link/");
+      var validList = list[1].split("/");
+      print("dynamic link terminated app $validList");
+    }
+
+    /// `When user clicks on dynamic link while app is not terminated`
+    dynamicLinks.onLink.listen((dynamicLinkData) async {
+      var list = dynamicLinkData.link.toString().split(".link/");
+      var validList = list[1].split("/");
+      print("dynamic link not terminated app$validList");
+
+    }).onError((error) {
+      print('onLink error');
+      print(error.message);
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    initDynamicLinks();
+  }
 
   @override
   Widget build(BuildContext context) {

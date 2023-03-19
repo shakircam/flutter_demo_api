@@ -31,22 +31,6 @@ class HomePage extends BaseView<HomeController> {
             itemBuilder: (context, index) =>
                 ItemBrand(dataModel: controller.brandList[index])),
       ),
-
-      /*   child: Obx(
-            () => ListView.separated(
-          shrinkWrap: true,
-          itemCount: controller.projectList.length,
-          primary: false,
-          physics: const NeverScrollableScrollPhysics(),
-          itemBuilder: (context, index) {
-            var model = controller.projectList[index];
-
-            return ItemBrand(dataModel: model);
-          },
-          separatorBuilder: (BuildContext context, int index) =>
-          const SizedBox(height: AppValues.smallMargin),
-        ),
-      ),*/
     );
   }
 }

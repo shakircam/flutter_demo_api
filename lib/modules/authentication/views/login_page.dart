@@ -3,9 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_demo/core/base/base_view.dart';
 import 'package:flutter_demo/core/widget/custom_app_bar.dart';
 import 'package:flutter_demo/modules/setting/controller/setting_controller.dart';
-import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get/get.dart';
-import 'package:hive/hive.dart';
+
 
 import '../controller/input_validator.dart';
 

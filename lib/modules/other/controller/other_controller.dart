@@ -58,7 +58,7 @@ class OtherController extends BaseController {
   }
 
   void stopTimer() {
-    timer.value?.cancel();
+    timer.value.cancel();
   }
 
   void launchUrl(String url) async {
