@@ -37,7 +37,6 @@ class OtherController extends BaseController {
 
   @override
   void onInit() {
-    // startTimer();
     super.onInit();
   }
 

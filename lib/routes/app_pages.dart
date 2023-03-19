@@ -48,7 +48,6 @@ class AppPages {
     GetPage(
       name: _Paths.INFORMATION_DETAILS,
       page: () => InformationDetails(),
-      transition: Transition.rightToLeft,
       binding: InformationDetailsBinding(),
     ),
   ];

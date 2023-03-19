@@ -22,20 +22,18 @@ class DamiList {
     },
   ];
 
-  static List<String> informationItems = [
-    'Fish harvesting information',
-    'Concern about fish ',
-    'Specific Fish with food ',
-    'Weather information',
-    'Custom fish harvesting',
-    'Fish size with food info',
-    'Custom fish harvesting',
-    'Custom fish harvesting',
-    'Custom fish harvesting',
-    'Custom fish harvesting',
-    'Custom fish harvesting',
-    'Custom fish harvesting',
+
+ static  List<InformationModel> informationItems = [
+    InformationModel(id: 1, name: "Fish harvesting information",des:"Fish harvesting information dami data "),
+    InformationModel(id: 2, name: "Concern about fish ",des:"Concern about fish dami data "),
+    InformationModel(id: 3, name: "Specific Fish with food ",des:"Specific Fish with food  dami data "),
+    InformationModel(id: 4, name: "Weather information'",des:"Weather information dami data "),
+    InformationModel(id: 5, name: "Custom fish harvesting",des:"Custom fish harvesting dami data "),
+    InformationModel(id: 6, name: "Fish size with food info",des:"Fish size with food info dami data "),
+    InformationModel(id: 7, name: "Fish information",des:"Fish information dami data "),
+    InformationModel(id: 8, name: "General fish harvesting",des:"General fish harvesting dami data "),
   ];
+
 
   static String damiText1 =
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. " +
@@ -58,3 +56,17 @@ class DamiList {
       " very popular during the Renaissance. The first line of Lorem Ipsum, " +
       "Lorem ipsum dolor sit amet, comes from a line in section 1.10.32.";
 }
+
+class InformationModel {
+  int? id;
+  String? name;
+  String? des;
+  InformationModel(
+      {  this.id,
+         this.name,
+        this.des,
+      });
+
+}
+
+

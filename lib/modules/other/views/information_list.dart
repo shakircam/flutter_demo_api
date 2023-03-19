@@ -14,15 +14,15 @@ class InformationList extends StatelessWidget {
         ),
         body: ListView.separated(
           itemBuilder: (context, index) => ListTile(
-            title: Text('${DamiList.informationItems[index]}'),
+            title: Text('${DamiList.informationItems[index].name}'),
             trailing: Icon(Icons.arrow_forward_ios),
             onTap: () {
               Get.toNamed(Routes.INFORMATION_DETAILS, arguments: {
-                "greeting": DamiList.informationItems[index],
+                "id": DamiList.informationItems[index].id,
               });
             },
           ),
-          separatorBuilder: (context, index) => Divider(
+          separatorBuilder: (context, index) => const Divider(
             height: 0.1, // set the height of the divider
             color: Colors.grey, // set the color of the divider
           ),
