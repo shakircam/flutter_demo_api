@@ -97,7 +97,7 @@ abstract class AppValues {
   static const int defaultThrottleTimeInMilliSeconds = 500;
 
   static const double height_16 = 16;
-  static const defaultDataSize = "100";
+  static const defaultDataSize = "20";
   static const defaultPage = "1";
   static const defaultDate = "2022-09-08";
 }

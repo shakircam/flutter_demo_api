@@ -3,6 +3,8 @@ import 'package:flutter_demo/core/utils/dami_list.dart';
 import 'package:flutter_demo/routes/app_pages.dart';
 import 'package:get/get.dart';
 
+import 'details_info.dart';
+
 class InformationList extends StatelessWidget {
   const InformationList({super.key});
 
@@ -17,9 +19,7 @@ class InformationList extends StatelessWidget {
             title: Text('${DamiList.informationItems[index].name}'),
             trailing: Icon(Icons.arrow_forward_ios),
             onTap: () {
-              Get.toNamed(Routes.INFORMATION_DETAILS, arguments: {
-                "id": DamiList.informationItems[index].id,
-              });
+              Navigator.pushNamed(context, Routes.INFORMATION_DETAILS, arguments: {'id': 'Information list page. Id is ${DamiList.informationItems[index].id}',});
             },
           ),
           separatorBuilder: (context, index) => const Divider(

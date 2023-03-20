@@ -30,16 +30,18 @@ class CustomBoxContainer extends StatelessWidget {
           ),
         ),
         padding: const EdgeInsets.all(16),
-        child: Row(
-          children: [
-            SvgPicture.asset(imagePath),
-            const SizedBox(width: 8),
-            Text(
-              text,
-              style: TextStyle(
-                  color: solidColor, fontWeight: FontWeight.bold, fontSize: 16),
-            ),
-          ],
+        child: Expanded(
+          child: Row(
+            children: [
+              SvgPicture.asset(imagePath),
+              const SizedBox(width: 8),
+              Text(
+                text,
+                style: TextStyle(
+                    color: solidColor, fontWeight: FontWeight.bold, fontSize: 16),
+              ),
+            ],
+          ),
         ),
       ),
     );

@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
 import '../../../core/values/app_values.dart';
+import '../../../core/values/text_styles.dart';
 import '../../../core/widget/base_widget_mixin.dart';
 import '../../../core/widget/elevated_container.dart';
 import '../../../core/widget/ripple.dart';
@@ -21,24 +22,22 @@ class ItemBrand extends StatelessWidget with BaseWidgetMixin {
   @override
   Widget body(BuildContext context) {
     return ElevatedContainer(
-      child: Ripple(
-        onTap: _onTap,
         child: Padding(
           padding: const EdgeInsets.all(AppValues.padding),
-          child: Row(
+          child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(dataModel.name),
+              Text('Brand ${dataModel.name}',style: labelStyle,),
               const SizedBox(width: AppValues.margin_10),
-              Text(dataModel.strength),
+              Text('Strength ${dataModel.strength}',style: cyanText16,),
               const SizedBox(width: AppValues.margin_10),
-              Text(dataModel.form),
+              Text('Form ${dataModel.form}'),
               const SizedBox(width: AppValues.margin_10),
             ],
           ),
         ),
-      ),
+
     );
   }
 

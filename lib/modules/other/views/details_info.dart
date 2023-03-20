@@ -1,66 +1,40 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_demo/core/utils/dami_list.dart';
-import 'package:get/get.dart';
 import 'package:share/share.dart';
 
-import '../controller/details_controller.dart';
+
 
 class InformationDetails extends StatelessWidget {
    InformationDetails({super.key});
+  //String id;
 
   _shareData() {
     Share.share('check out my website https://www.codewithflutter.com');
   }
 
-
   @override
   Widget build(BuildContext context) {
+   // final Number number = ModalRoute.of(context)!.settings.arguments as Number;
+    print("Dynamic page open");
+    final arguments = (ModalRoute.of(context)?.settings.arguments ?? <String, dynamic>{}) as Map;
+    var id = arguments['id'];
 
-    final id = Get.arguments['id'];
-    // Use the ID to display the details
-    if (id != null) {
-      // Use the ID to display the details
-      return Scaffold(
-        appBar: AppBar(
-          title: Text('${Get.arguments['id']}'),
-        ),
-        body: Center(
-          child: Text('Details for ID $id'),
-        ),
-      );
-    } else {
-      // Handle the case when the ID is null
-      return Scaffold(
-        appBar: AppBar(
-          title: Text('Error'),
-        ),
-        body: Center(
-          child: Text('Invalid ID'),
-        ),
-      );
-    }
-
-    //   Scaffold(
-    //   appBar: AppBar(
-    //     title: Text('Details'),
-    //   ),
-    //   body: Center(
-    //     child: GetBuilder<DetailsController>(
-    //       init: DetailsController(),
-    //       builder: (controller) {
-    //         return
-    //           Column(
-    //             mainAxisAlignment: MainAxisAlignment.center,
-    //             children: [
-    //               Text(controller.getData.des ?? 'No description provided.'),
-    //               SizedBox(height: 10,),
-    //               Text(controller.getData.id.toString() ?? "Default id 1"),
-    //             ],
-    //           );
-    //       },
-    //     ),
-    //   ),
-    // );
+    //final id = Get.arguments['id'];
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Details'),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: GestureDetector(
+                onTap: () => _shareData(), child: Icon(Icons.share)),
+          )
+        ],
+      ),
+      body: Center(
+        child: Text('Coming from $id',
+        style: TextStyle(fontSize: 16,color: Colors.blue[400]),)
+      ),
+    );
 
   }
 }

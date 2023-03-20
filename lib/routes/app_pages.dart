@@ -47,7 +47,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.INFORMATION_DETAILS,
-      page: () => InformationDetails(),
+      page: () =>InformationDetails(),
       binding: InformationDetailsBinding(),
     ),
   ];
