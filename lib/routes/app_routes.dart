@@ -10,6 +10,7 @@ abstract class Routes {
   static const OTHER = _Paths.OTHER;
   static const INFORMATION_LIST = _Paths.INFORMATION_LIST;
   static const INFORMATION_DETAILS = _Paths.INFORMATION_DETAILS;
+  static const LOGIN = _Paths.LOGIN;
 }
 
 abstract class _Paths {
@@ -19,4 +20,5 @@ abstract class _Paths {
   static const OTHER = '/other';
   static const INFORMATION_LIST = '/information-list';
   static const INFORMATION_DETAILS = '/information-details';
+  static const LOGIN = '/login';
 }

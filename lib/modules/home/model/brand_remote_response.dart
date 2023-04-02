@@ -23,6 +23,8 @@ class BrandRemoteResponse{
   }
 }
 
+
+
 class Data {
   Data({
     this.id,

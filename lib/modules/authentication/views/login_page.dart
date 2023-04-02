@@ -82,6 +82,7 @@ class LoginPage extends BaseView<SettingController> with InputValidationMixin {
               ),
             ),
             Obx(() => Text("Number is: ${controller.count}")),
+            Text('Dynamic: ${Get.parameters['id']}'),
           ],
         ),
       ),

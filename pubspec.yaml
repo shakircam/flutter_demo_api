@@ -13,6 +13,7 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.4
+  app_settings: 4.2.0
   get: ^4.6.1
   flutter_svg: ^0.22.0
   dio: ^4.0.4
@@ -34,6 +35,9 @@ dependencies:
   google_maps_flutter: ^2.1.1
   permission_handler: ^10.2.0
   share: ^2.0.4
+  firebase_core: ^2.8.0
+  firebase_messaging: ^14.3.0
+  flutter_local_notifications: ^9.2.0
   firebase_dynamic_links: ^5.0.17
 
 dev_dependencies:

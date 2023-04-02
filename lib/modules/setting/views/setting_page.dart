@@ -4,6 +4,7 @@ import 'package:flutter_demo/core/values/app_values.dart';
 import 'package:flutter_demo/core/widget/custom_app_bar.dart';
 import 'package:flutter_demo/modules/setting/controller/setting_controller.dart';
 import 'package:get/get.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class SettingsPage extends BaseView<SettingController> {
   SettingsPage() {
@@ -48,7 +49,7 @@ class SettingsPage extends BaseView<SettingController> {
                 height: 10,
               ),
               Text('Password: ${controller.loginInfo?.password ?? ""}'),
-              Text('Number: ${controller.count}'),
+              Text('Number: ${controller.count}')
             ],
           )),
     );
